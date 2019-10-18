@@ -1,6 +1,6 @@
 using Plots
 using Wavelets
-WT.paul10
+WT.CFW(WT.paul10,8.0)
 supertype(typeof(WT.paul10))
 wavelet(WT.morl)
 wavelet(WT.morl,4)

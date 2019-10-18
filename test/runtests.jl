@@ -1,7 +1,9 @@
 using Wavelets
-using Test
-using LinearAlgebra
-using DelimitedFiles
+using Compat.Test
+using Compat.LinearAlgebra
+using Compat.DelimitedFiles
+using Compat: ComplexF64, copyto!, range
+import Compat
 
 # modified from Base.Test
 function vecnorm_eq(va, vb, Eps, astr="a", bstr="b")
@@ -12,7 +14,7 @@ function vecnorm_eq(va, vb, Eps, astr="a", bstr="b")
         return false
     end
 
-    diff = norm(va - vb)
+    diff = Compat.norm(va - vb)
     if !isnan(Eps) && diff > Eps
         #sdiff = string("|", astr, " - ", bstr, "| <= ", Eps)
         #error("assertion failed: ", sdiff,
